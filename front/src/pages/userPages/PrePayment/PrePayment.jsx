@@ -86,7 +86,7 @@ function PrePayment(props) {
             </main>
             <footer css={s.footer}>
                 <div>
-                    <p>총합: {totalPrice}원</p> {/* 총합을 여기 표시 */}
+                    <p>총합 : {totalPrice}원</p> {/* 총합을 여기 표시 */}
                 </div>
                 <div>
                     <div onClick={handleCompletePayment}>

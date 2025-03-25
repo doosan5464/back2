@@ -15,8 +15,7 @@ import DessertMenu from './menu/DessertMenu';
 import { addedCart } from '../../../atoms/addedCart/addedCart';
 import { useRecoilState } from 'recoil';
 
-// 보류@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-
+// 메뉴가격ID, 세트여부, 개수(), 포인트 사용 여부, 10000 (결제 + 마일리지)
 function OrderPage(props) {
     const navi = useNavigate();
 
@@ -176,7 +175,7 @@ function OrderPage(props) {
                 </div>
                 <span>
                     <p onClick={handlePaymentOnClick}>주문하기</p>
-                    <p>마일리지 조회</p>
+                    <p>상품권</p>
                 </span>
             </footer>
 

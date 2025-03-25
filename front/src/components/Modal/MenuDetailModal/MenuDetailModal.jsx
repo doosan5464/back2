@@ -15,8 +15,9 @@ const MenuDetailModal = ({ menu, onClose }) => { // menu, onClose -> OrderPage�
 
     const [isLarge, setIsLarge] = useState(null);
 
-    const { data: menuData, error, isLoading } = menuForUser(); // 메뉴 데이터 및 가격을 훅에서 가져옴 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    console.log("Fetched menu data:", menuData); // 메뉴 데이터 확인
+    const { data: menuData, error, isLoading } = menuForUser(); 
+    console.log("DB메뉴 : ", menuData); // 메뉴 데이터 확인
+    console.log("장바구니 : ", addedCartState); // 메뉴 데이터 확인
 
     // 사이드와 음료 데이터만 필터링
     const filteredSides = menuData?.filter(item => item.menuCategory === "사이드");
@@ -232,9 +233,9 @@ const MenuDetailModal = ({ menu, onClose }) => { // menu, onClose -> OrderPage�
                                             <div>
                                                 <p>{drink.menuName}</p>
                                                 <p>
-                                                    {drink.menuName === defaultSide 
+                                                    {drink.menuName === defaultDrink 
                                                         ? "+0원" 
-                                                        : `+${Math.max(drink.menuPrice[0].discountPrice - filteredSides?.find(side => side.menuName === defaultSide)?.menuPrice[0]?.discountPrice, 0)}원`}
+                                                        : `+${Math.max(drink.menuPrice[0].discountPrice - filteredDrinks?.find(drink => drink.menuName === defaultDrink)?.menuPrice[0]?.discountPrice, 0)}원`}
                                                 </p>
                                             </div>
                                         </div>
